@@ -1,4 +1,4 @@
-package com.clark.blogxmanage.controller;
+package com.clark.blogxweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/hello-World", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-public class HelloWorld {
+public class HelloWorldController {
     @Autowired
     private com.clark.blogxfunction.controller.HelloWorld helloWorld;
 
     @GetMapping(value = "hello")
     public String hello() {
-        String s = helloWorld.hello();
-        return "hello!";
+        return helloWorld.hello();
     }
 }
